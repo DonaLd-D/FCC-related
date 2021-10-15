@@ -617,3 +617,26 @@ function convertToRoman(num) {
     return newStr;
 }
 ```
+
+### Caesars Cipher
+```js
+function rot13(str) {
+  let standard='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  let strToArr=str.split('')
+
+  strToArr.forEach((item,index)=>{
+    if(item.match(/^.*[A-Z]+.*$/)){
+      let nowIndex=standard.indexOf(item)
+      let beforeIndex=nowIndex-13
+      if(beforeIndex<0) beforeIndex=standard.length+beforeIndex
+      strToArr[index]=standard.charAt(beforeIndex)
+    }
+  })
+
+  return strToArr.join('')
+}
+
+rot13("SERR PBQR PNZC");
+```
+
+### 
