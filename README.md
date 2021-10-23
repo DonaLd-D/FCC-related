@@ -108,11 +108,11 @@ function translatePigLatin(str) {
     arr.push(firstChar)
     return isVowel(arr[0])?arr:transfer(arr)
   }
-  let headToTail=(s=>{
+  let headToTail=s=>{
     if(s.length<2) return s
     let arr=strToArr(s)
     return transfer(arr).join('')+'ay'
-  })
+  }
 
   if(!isVowel(firstChar)){
     if(allConsonant(str)) return str+'ay'
